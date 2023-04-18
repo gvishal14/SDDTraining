@@ -1,76 +1,3 @@
-// import React from 'react'
-
-// const Login = () => {
-//   return (
-//     <div>
-//       <form>
-//   {/* Email input */}
-//   <div className="form-outline mb-4">
-//     <input type="email" id="form2Example1" className="form-control" />
-//     <label className="form-label" htmlFor="form2Example1">
-//       Email address
-//     </label>
-//   </div>
-//   {/* Password input */}
-//   <div className="form-outline mb-4">
-//     <input type="password" id="form2Example2" className="form-control" />
-//     <label className="form-label" htmlFor="form2Example2">
-//       Password
-//     </label>
-//   </div>
-//   {/* 2 column grid layout for inline styling */}
-//   <div className="row mb-4">
-//     <div className="col d-flex justify-content-center">
-//       {/* Checkbox */}
-//       <div className="form-check">
-//         <input
-//           className="form-check-input"
-//           type="checkbox"
-//           defaultValue=""
-//           id="form2Example31"
-//           defaultChecked=""
-//         />
-//         <label className="form-check-label" htmlFor="form2Example31">
-//           {" "}
-//           Remember me{" "}
-//         </label>
-//       </div>
-//     </div>
-//     <div className="col">
-//       {/* Simple link */}
-//       <a href="#!">Forgot password?</a>
-//     </div>
-//   </div>
-//   {/* Submit button */}
-//   <button type="button" className="btn btn-primary btn-block mb-4">
-//     Sign in
-//   </button>
-//   {/* Register buttons */}
-//   <div className="text-center">
-//     <p>
-//       Not a member? <a href="#!">Register</a>
-//     </p>
-//     <p>or sign up with:</p>
-//     <button type="button" className="btn btn-link btn-floating mx-1">
-//       <i className="fab fa-facebook-f" />
-//     </button>
-//     <button type="button" className="btn btn-link btn-floating mx-1">
-//       <i className="fab fa-google" />
-//     </button>
-//     <button type="button" className="btn btn-link btn-floating mx-1">
-//       <i className="fab fa-twitter" />
-//     </button>
-//     <button type="button" className="btn btn-link btn-floating mx-1">
-//       <i className="fab fa-github" />
-//     </button>
-//   </div>
-// </form>
-
-//     </div>
-//   )
-// }
-
-// export default Login
 
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
@@ -83,15 +10,14 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
-import "./Style.css";
 
-export default function App() {
+export default function LoginPage() {//use of pascal casing 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return(
     <View style={styles.container}>
-      <Image style={styles.image} source={require("./assets/log2.png")} /> 
+      {/* <Image style={styles.image} source={require("./assets/log2.png")} />  */}
       <StatusBar style="auto" />
       <View style={styles.inputView}>
         <TextInput
@@ -120,6 +46,44 @@ export default function App() {
         <Text style={styles.loginText}>LOGIN</Text> 
       </TouchableOpacity> 
     </View>
-  )
+  );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    marginBottom: 40,
+  },
+  inputView: {
+    backgroundColor: "#FFC0CB",
+    borderRadius: 30,
+    width: "70%",
+    height: 45,
+    marginBottom: 20,
+    alignItems: "center",
+  },
+  TextInput: {
+    height: 50,
+    flex: 1,
+    padding: 10,
+    marginLeft: 20,
+  },
+  forgot_button: {
+    height: 30,
+    marginBottom: 30,
+  },
+  loginBtn: {
+    width: "80%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "#FF1493",
+  },
+});
